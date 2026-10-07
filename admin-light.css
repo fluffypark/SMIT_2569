@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  --bg: #fffaf7;
+  --panel: #ffffff;
+  --panel-2: #fff4ed;
+  --text: #28231f;
+  --muted: #77716b;
+  --line: #eadfd7;
+  --accent: #ed6735;
+  --green: #438b58;
+  --gold: #a87a22;
+}
+body { background: #fffaf7; color: #28231f; }
+.sidebar { background: #fff; border-right-color: #eadfd7; }
+.admin-topbar { background: #fffaf7ed; border-bottom-color: #eadfd7; }
+.side-link { color: #716b65; }
+.side-link:hover,.side-link.active { background: #fff1e8; color: #28231f; }
+.side-link > span { color: #81776f; }
+.side-link.active > span { color: #ed6735; }
+.side-link.active { box-shadow: inset 2px 0 #ed6735; }
+.side-link i { background: #fff0e8; color: #bd4822; }
+.admin-card,.stat-card,.staff-card,.promotion-card { background: #fff; border-color: #eadfd7; }
+.stat-card > span,.card-heading p,.page-heading p,.breadcrumb,.today-label,.admin-identity small { color: #77716b; }
+.stat-card > b,.chart-total b,.member-stats b { color: #28231f; }
+.chart-bars { background: repeating-linear-gradient(to bottom,transparent 0,transparent 32px,#28231f0d 33px,#28231f0d 34px); }
+.chart-y,.chart-bars small,.sparkline,.staff-stats span,.staff-status,.promo-expiry,.admin-footer { color: #77716b; }
+.card-heading select,.booking-toolbar select,.search-field { background: #fffaf7; color: #443d37; border-color: #eadfd7; }
+.search-field input { color: #28231f; }
+.search-field input::placeholder { color: #978c83; }
+td { color: #504941; border-bottom-color: #f2eae4; }
+th { color: #82786f; border-bottom-color: #eadfd7; }
+.customer-cell b,.staff-name b,.promotion-card h2,.next-person b { color: #28231f; }
+.customer-cell small,.service-cell small,.date-cell small,.staff-name small,.next-person small { color: #77716b; }
+.customer-avatar { background: #fff0e8; color: #bd4822; }
+.status-pill { background: #eaf5ed; color: #367b49; }
+.status-pill.pending { background: #fff4dc; color: #906617; }
+.status-pill.done { background: #eef2f9; color: #536f9e; }
+.status-pill.cancelled { background: #fff0ec; color: #b9573c; }
+.row-status select { color: inherit; }
+.next-time,.promo-tag { color: #c85024; }
+.next-barber,.plain-link { color: #61584f; }
+.member-stats .admin-card,.view-panel > .admin-card.booking-manager { background: #fff; }
+.tier-pill { color: #8e681c; border-color: #d2b76d; }
+.tier-silver { color: #666a70; border-color: #c4c7ca; }
+.tier-bronze { color: #9b613b; border-color: #d9b6a0; }
+.tier-vip { color: #b74f30; border-color: #e4aa94; }
+.promo-toggle { background: #e4ddd6; }
+.promo-toggle::after { background: #8c8279; }
+.promo-toggle.on { background: #ffdfcc; }
+.promo-toggle.on::after { background: #ed6735; }
+.promotion-card::after { color: #ed673514; }
+.sidebar-bottom { border-top-color: #eadfd7; }
+.online-indicator { color: #5f775f; }
+.sidebar-bottom a { color: #716b65; }
+.admin-footer { border-top-color: #eadfd7; }
+.login-panel > p,#adminLoginForm label { color: #625a53; }
+#adminLoginForm input { background: #fff; color: #28231f; border-color: #eadfd7; }
+#adminLoginForm input::placeholder { color: #998e85; }
+.login-panel > small,.back-to-site { color: #77716b; }
+.login-kicker,.admin-eyebrow { color: #88776b; }
+.demo-warning { color: #716b65; }
+.logout-button { color: #6b625a; }
+.logout-button:hover { color: #bd4822; }
+.admin-toast { background: #28231f; color: #fff; }
+.booking-toolbar select { color: #514941; }
+.member-active { color: #367b49; }
+.empty-table,.empty-state { color: #77716b; }
+
+@media (max-width: 650px) {
+  .sidebar { background: #fff; border-top-color: #eadfd7; }
+  .side-link { color: #716b65; }
+  .side-link.active { box-shadow: inset 0 2px #ed6735; }
+}

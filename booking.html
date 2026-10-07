@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf7" />
+    <title>จองคิว — Street Barber Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="booking">
+    <div id="siteHeader"></div>
+    <main class="page-main content-wrap">
+      <header class="page-title"><span class="eyebrow">MAKE IT YOURS</span><h1>จองคิว<span class="orange-dot">.</span></h1><p>เลือกช่าง วัน และเวลาที่สะดวกได้เลย ไม่ต้องสมัครสมาชิก</p></header>
+      <div class="booking-layout">
+        <section class="booking-main">
+          <div class="booking-step">
+            <div class="step-heading"><span>01</span><div><h2>เลือกช่างของคุณ</h2><p>แต่ละคนมีสไตล์เฉพาะตัว</p></div></div>
+            <div class="barber-list">
+              <button class="barber-card selected" data-barber="พี่เจ"><span class="barber-photo barber-je"></span><span><b>พี่เจ</b><small>Classic &amp; Fade</small><i>★ 4.9 · 128 รีวิว</i></span><span class="select-check">✓</span></button>
+              <button class="barber-card" data-barber="มาร์ค"><span class="barber-photo barber-mark"></span><span><b>มาร์ค</b><small>Modern &amp; Texture</small><i>★ 4.8 · 96 รีวิว</i></span><span class="select-check">✓</span></button>
+              <button class="barber-card" data-barber="บอส"><span class="barber-photo barber-boss"></span><span><b>บอส</b><small>Beard &amp; Grooming</small><i>★ 5.0 · 74 รีวิว</i></span><span class="select-check">✓</span></button>
+            </div>
+          </div>
+          <div class="booking-step">
+            <div class="step-heading"><span>02</span><div><h2>เลือกวันและเวลา</h2><p>คิวว่างสำหรับการสาธิต</p></div><small class="timezone">GMT+7</small></div>
+            <div class="date-picker"><button id="prevDates" aria-label="วันก่อนหน้า">‹</button><div class="date-options" id="dateOptions"></div><button id="nextDates" aria-label="วันถัดไป">›</button></div>
+            <div class="time-label">ช่วงเช้า <small>คิวว่าง <i class="live-dot"></i></small></div><div class="time-grid" id="timeGrid"></div>
+            <div class="time-label afternoon-label">ช่วงบ่าย</div><div class="time-grid" id="afternoonGrid"></div>
+          </div>
+        </section>
+        <aside class="booking-summary">
+          <span class="eyebrow">BOOKING SUMMARY</span><h2>ลุคใหม่รอคุณอยู่</h2>
+          <div class="summary-service"><span>✂</span><div><b>ตัดผม + สระ</b><small>Haircut &amp; Wash</small></div><b>฿450</b></div>
+          <div class="summary-line"></div>
+          <div class="summary-row"><span>ช่าง</span><b id="summaryBarber">พี่เจ</b></div>
+          <div class="summary-row"><span>วันที่</span><b id="summaryDate">เลือกวันที่</b></div>
+          <div class="summary-row"><span>เวลา</span><b id="summaryTime">เลือกเวลา</b></div>
+          <div class="deposit-box"><span>มัดจำเพื่อยืนยันคิว</span><b>฿100</b><small>ชำระส่วนที่เหลือ ฿350 ที่หน้าร้าน</small></div>
+          <button class="button button-primary summary-submit" id="bookButton" disabled>ยืนยันการจอง <span>↗</span></button>
+          <p class="secure-note">◇ ชำระมัดจำปลอดภัยผ่าน PromptPay ในระบบจริง</p>
+          <small class="policy-note">ข้อมูลคิวในหน้านี้เป็นตัวอย่างสำหรับโปรโตไทป์</small>
+        </aside>
+      </div>
+    </main>
+    <div id="siteFooter"></div>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="modal-backdrop" id="bookingModal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="ปิด">×</button><span class="success-mark">✓</span><span class="eyebrow">ONE STEP CLOSER</span><h2 id="modalTitle">คิวของคุณ<br /><span>ใกล้เรียบร้อยแล้ว</span></h2><p>ตรวจสอบรายละเอียดการจองก่อนชำระมัดจำ</p><div class="modal-details"><div><span>ช่าง</span><b id="modalBarber">—</b></div><div><span>วันและเวลา</span><b id="modalDateTime">—</b></div><div><span>บริการ</span><b>ตัดผม + สระ · ฿450</b></div></div><button class="button button-primary modal-pay" id="payButton">ชำระมัดจำ ฿100 <span>↗</span></button><small class="policy-note">ตัวอย่างการจอง — ไม่ได้ตัดเงินจริง</small></div></div>
+    <script src="app.js"></script>
+    <script src="booking.js"></script>
+  </body>
+</html>

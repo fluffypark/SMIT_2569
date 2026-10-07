@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf7" />
+    <title>บัญชีของฉัน — Street Barber Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="account">
+    <div id="siteHeader"></div>
+    <main class="page-main content-wrap account-page">
+      <header class="account-heading">
+        <div><span class="eyebrow">YOUR STREET BARBER CLUB</span><h1>บัญชีของฉัน<span class="orange-dot">.</span></h1><p id="accountGreeting">ดูแลทุกลุคของคุณได้ในที่เดียว</p></div>
+        <button class="button button-outline" id="accountLogout" type="button">ออกจากระบบ</button>
+      </header>
+      <section class="account-locked" id="accountLocked" hidden>
+        <span class="feature-icon">♙</span><h2>เข้าสู่ระบบเพื่อดูข้อมูลสมาชิก</h2><p>สมัครสมาชิกหรือเข้าสู่ระบบเพื่อดูประวัติการตัดผม คะแนนสะสม และนัดหมายของคุณ</p><button class="button button-primary" id="accountLoginButton">สมัครสมาชิก / เข้าสู่ระบบ <span>↗</span></button>
+      </section>
+      <div id="accountDashboard" hidden>
+        <section class="account-top-grid">
+          <article class="account-profile-card"><div class="profile-avatar-large" id="accountAvatar">U</div><div><span class="tier-label" id="accountTier">BRONZE MEMBER</span><h2 id="accountName">สมาชิก</h2><p id="accountEmail">user@gmail.com</p><small id="accountPhone"></small></div><a href="membership.html" class="profile-card-link">สิทธิสมาชิก ↗</a></article>
+          <article class="account-points-card"><div class="points-card-top"><span>POINTS BALANCE</span><span>✳</span></div><b id="accountPoints">0</b><p>คะแนนสะสมของคุณ</p><div class="account-progress"><span id="accountProgress"></span></div><small id="accountProgressText">เริ่มสะสมคะแนนเพื่อเลื่อนระดับ</small><a href="membership.html">ดูรางวัลและสิทธิพิเศษ ↗</a></article>
+        </section>
+        <section class="account-section">
+          <div class="account-section-heading"><div><span class="eyebrow">YOUR APPOINTMENTS</span><h2>การจองคิว<span class="orange-dot">.</span></h2></div><a class="text-link-account" href="booking.html">จองคิวใหม่ <span>↗</span></a></div>
+          <div class="appointment-list" id="accountAppointments"></div>
+        </section>
+        <section class="account-section">
+          <div class="account-section-heading"><div><span class="eyebrow">YOUR HAIRCUT JOURNEY</span><h2>ประวัติการตัดผม<span class="orange-dot">.</span></h2></div><span class="section-note">ข้อมูลจำลองสำหรับโปรโตไทป์</span></div>
+          <div class="history-list" id="haircutHistory"></div>
+        </section>
+        <section class="account-section">
+          <div class="account-section-heading"><div><span class="eyebrow">PICKED FOR YOU</span><h2>ทรงผมแนะนำ<span class="orange-dot">.</span></h2></div><a class="text-link-account" href="styles.html">ดูทั้งหมด <span>↗</span></a></div>
+          <div class="recommended-grid">
+            <a class="recommended-card" href="styles.html"><span class="recommend-image style-one"></span><span><b>Textured Crop</b><small>เหมาะกับผมตรง · ดูแลง่าย</small></span><i>↗</i></a>
+            <a class="recommended-card" href="styles.html"><span class="recommend-image style-two"></span><span><b>Low Taper Fade</b><small>เข้ากับรูปหน้า · ลุคคลาสสิก</small></span><i>↗</i></a>
+            <a class="recommended-card" href="styles.html"><span class="recommend-image style-three"></span><span><b>Modern Mullet</b><small>ลุคใหม่ · สไตล์สตรีท</small></span><i>↗</i></a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div id="siteFooter"></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+    <script src="account-page.js"></script>
+  </body>
+</html>

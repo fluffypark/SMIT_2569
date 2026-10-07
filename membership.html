@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf7" />
+    <title>สมาชิกและคะแนนสะสม — Street Barber Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="membership">
+    <div id="siteHeader"></div>
+    <main class="page-main content-wrap">
+      <header class="page-title"><span class="eyebrow">GOOD TO HAVE YOU HERE</span><h1>สมาชิกและสิทธิพิเศษ<span class="orange-dot">.</span></h1><p>ทุกครั้งที่มา มีความหมาย — สะสมแต้มและปลดล็อกรางวัลของคุณ</p></header>
+      <section class="membership-overview">
+        <div class="loyalty-card"><div class="loyalty-top"><span class="brand-mark">S<span>/</span>B</span><span class="tier-label">GOLD MEMBER</span></div>        <div class="loyalty-name">USER <small>สมาชิกตั้งแต่ ก.พ. 2024</small></div><div class="points-total"><b>1,280</b><span>POINTS</span></div><div class="progress-track"><span></span></div><div class="progress-copy"><span>อีก 720 แต้ม</span><span>สู่ VIP CLUB</span></div><div class="loyalty-perks"><span>✦ ส่วนลดวันเกิด</span><span>✦ ตัดครบ 10 ครั้ง ฟรี 1 ครั้ง</span></div></div>
+        <div class="membership-copy"><span class="eyebrow">YOUR CLUB, YOUR PERKS</span><h2>ยิ่งมา ยิ่งคุ้ม<span class="orange-dot">.</span></h2><p>รับ 1 คะแนนทุกยอดใช้จ่าย ฿25 แลกส่วนลดหรือของรางวัล และรับสิทธิพิเศษในเดือนเกิด</p><a class="button button-primary" href="booking.html">จองครั้งถัดไป <span>↗</span></a></div>
+      </section>
+      <section class="tier-section"><div class="section-heading"><div><span class="eyebrow">MEMBERSHIP TIERS</span><h2>ระดับสมาชิก<span class="orange-dot">.</span></h2></div><p>ยอดใช้จ่ายสะสมปลดล็อกสิทธิ์เพิ่มขึ้น</p></div><div class="tier-grid"><article class="tier-card"><span class="tier-symbol">01</span><h3>Bronze</h3><small>เริ่มต้น · 0 บาท</small><p>สะสมคะแนนทุกครั้งที่ใช้บริการ</p></article><article class="tier-card silver"><span class="tier-symbol">02</span><h3>Silver</h3><small>ยอดสะสม ฿5,000</small><p>รับคะแนนโบนัสและส่วนลดพิเศษ</p></article><article class="tier-card gold"><span class="tier-symbol">03</span><h3>Gold</h3><small>ยอดสะสม ฿15,000</small><p>สิทธิพิเศษวันเกิดและคิว Priority</p></article><article class="tier-card vip"><span class="tier-symbol">04</span><h3>VIP Club</h3><small>ยอดสะสม ฿30,000</small><p>บริการพิเศษและของขวัญจากร้าน</p></article></div></section>
+      <section class="rewards-section"><div class="section-heading"><div><span class="eyebrow">REDEEM YOUR POINTS</span><h2>รางวัลของคุณ<span class="orange-dot">.</span></h2></div></div><div class="reward-grid"><article><span>200 PTS</span><h3>ส่วนลด ฿100</h3><p>ใช้กับบริการครั้งถัดไป</p><button class="redeem-button" data-points="200">แลกรางวัล ↗</button></article><article><span>500 PTS</span><h3>ตัดผมฟรี 1 ครั้ง</h3><p>Classic Cut มูลค่า ฿350</p><button class="redeem-button" data-points="500">แลกรางวัล ↗</button></article><article><span>800 PTS</span><h3>Signature Grooming</h3><p>แพ็กเกจตัดผมพร้อมดูแลเครา</p><button class="redeem-button" data-points="800">แลกรางวัล ↗</button></article></div></section>
+    </main>
+    <div id="siteFooter"></div><div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script><script src="membership-page.js"></script>
+  </body>
+</html>

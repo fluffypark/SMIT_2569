@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf7" />
+    <title>Admin — Street Barber Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="admin-light.css" />
+  </head>
+  <body>
+    <main class="login-screen" id="loginScreen">
+      <section class="login-panel">
+        <a class="brand" href="index.html"><span class="brand-mark">S<span>/</span>B</span><span class="brand-name">STREET<br /><b>BARBER CLUB</b></span></a>
+        <span class="login-kicker">ADMIN PORTAL · 2026</span>
+        <h1>จัดการร้าน<br /><span>ในที่เดียว.</span></h1>
+        <p>เข้าสู่ระบบเพื่อดูภาพรวมร้าน จัดการคิว และดูแลสมาชิก</p>
+        <form id="adminLoginForm">
+          <label for="adminEmail">อีเมลผู้ดูแล</label>
+          <input id="adminEmail" type="email" autocomplete="username" placeholder="admin@gmail.com" required />
+          <label for="adminPassword">รหัสผ่าน</label>
+          <input id="adminPassword" type="password" autocomplete="current-password" placeholder="รหัสผ่าน" required />
+          <p class="login-error" id="loginError" role="alert"></p>
+          <button class="admin-button primary-button" type="submit">เข้าสู่ระบบ <span>↗</span></button>
+        </form>
+        <small>บัญชีทดลอง · admin@gmail.com / 1234</small>
+        <a class="back-to-site" href="index.html">← กลับไปหน้าเว็บไซต์</a>
+      </section>
+      <aside class="login-art">
+        <span class="art-label">STREET BARBER CLUB — BANGKOK</span>
+        <span class="art-title">THE<br />CRAFT<br /><i>OF</i><br />GROOMING</span>
+        <span class="art-foot">YOUR SHOP. YOUR STANDARD.</span>
+      </aside>
+      <p class="demo-warning">โปรโตไทป์สำหรับสาธิต · ระบบล็อกอินและข้อมูลเป็นตัวอย่างฝั่งเบราว์เซอร์เท่านั้น</p>
+    </main>
+
+    <div class="admin-app" id="adminApp" hidden>
+      <aside class="sidebar">
+        <a class="brand sidebar-brand" href="index.html"><span class="brand-mark">S<span>/</span>B</span><span class="brand-name">STREET<br /><b>BARBER CLUB</b></span></a>
+        <span class="side-caption">WORKSPACE</span>
+        <nav class="side-nav" aria-label="เมนูผู้ดูแล">
+          <button class="side-link active" data-view="overview"><span>▦</span> ภาพรวม</button>
+          <button class="side-link" data-view="bookings"><span>▤</span> รายการจอง <i id="navBookingCount">0</i></button>
+          <button class="side-link" data-view="members"><span>♙</span> สมาชิก</button>
+          <button class="side-link" data-view="staff"><span>✂</span> ทีมช่าง</button>
+          <button class="side-link" data-view="promotions"><span>✳</span> โปรโมชัน</button>
+        </nav>
+        <div class="sidebar-bottom"><div class="online-indicator"><i></i> ระบบพร้อมใช้งาน</div><a href="index.html">↗ ดูหน้าเว็บไซต์</a></div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="breadcrumb">STREET BARBER CLUB <span>/</span> <b id="currentPageName">ภาพรวม</b></div>
+          <div class="admin-actions"><span class="today-label" id="todayLabel"></span><span class="admin-avatar">A</span><span class="admin-identity"><b>Admin</b><small>ผู้ดูแลระบบ</small></span><button class="logout-button" id="logoutButton">ออกจากระบบ</button></div>
+        </header>
+        <div class="admin-content">
+          <section class="view-panel active" id="view-overview">
+            <div class="page-heading"><div><span class="admin-eyebrow">WEDNESDAY · YOUR DAILY BRIEFING</span><h1>สวัสดี, Admin <span>✳</span></h1><p>นี่คือภาพรวมร้านของคุณในวันนี้</p></div><button class="admin-button primary-button" data-open-view="bookings">＋ ดูคิววันนี้</button></div>
+            <div class="stats-grid">
+              <article class="stat-card"><span>ยอดขายวันนี้ <i>↗</i></span><b id="todayRevenue">฿0</b><small><em>+12.8%</em> จากสัปดาห์ที่แล้ว</small><div class="sparkline orange-spark">▂ ▄ ▃ ▅ ▄ ▆ ▅ ▇</div></article>
+              <article class="stat-card"><span>คิววันนี้ <i>↗</i></span><b id="todayBookings">0</b><small><em class="neutral">●</em> มีนัดหมายทั้งหมดวันนี้</small><div class="sparkline">▁ ▃ ▂ ▄ ▃ ▅ ▄ ▆</div></article>
+              <article class="stat-card"><span>สมาชิกทั้งหมด <i>↗</i></span><b id="totalMembers">0</b><small><em>+8.4%</em> สมาชิกใหม่เดือนนี้</small><div class="sparkline gold-spark">▂ ▂ ▃ ▃ ▄ ▅ ▅ ▆</div></article>
+              <article class="stat-card"><span>คะแนนรีวิวเฉลี่ย <i>↗</i></span><b>4.9 <small class="out-of">/ 5</small></b><small><em class="stars-small">★★★★★</em> จาก 1,248 รีวิว</small><div class="sparkline">▃ ▃ ▄ ▃ ▅ ▄ ▅ ▆</div></article>
+            </div>
+            <div class="dashboard-grid">
+              <section class="admin-card revenue-card"><div class="card-heading"><div><h2>ภาพรวมรายได้</h2><p>รายได้สุทธิจากบริการในช่วง 7 วันที่ผ่านมา</p></div><select id="revenueRange" aria-label="ช่วงเวลา"><option>7 วันที่ผ่านมา</option><option>เดือนนี้</option></select></div><div class="chart-total"><b>฿48,650</b><span>+12.8% <i>เทียบช่วงก่อนหน้า</i></span></div><div class="chart" aria-label="แผนภูมิรายได้ 7 วัน"><div class="chart-y"><span>฿12k</span><span>฿8k</span><span>฿4k</span><span>฿0</span></div><div class="chart-bars"><div><i style="height:48%"></i><small>จ.</small></div><div><i style="height:70%"></i><small>อ.</small></div><div><i style="height:59%"></i><small>พ.</small></div><div><i style="height:84%"></i><small>พฤ.</small></div><div><i style="height:63%"></i><small>ศ.</small></div><div><i style="height:100%"></i><small>ส.</small></div><div><i style="height:74%"></i><small>อา.</small></div></div></div></section>
+              <section class="admin-card today-card"><div class="card-heading"><div><h2>คิวถัดไป</h2><p>นัดหมายที่กำลังจะมาถึง</p></div><button class="plain-link" data-open-view="bookings">ดูทั้งหมด ↗</button></div><div id="nextAppointments" class="next-appointments"></div></section>
+            </div>
+            <section class="admin-card recent-card"><div class="card-heading"><div><h2>รายการจองล่าสุด</h2><p>ตรวจสอบและอัปเดตสถานะการนัดหมาย</p></div><button class="plain-link" data-open-view="bookings">จัดการคิว ↗</button></div><div class="table-wrap"><table><thead><tr><th>ลูกค้า</th><th>บริการ</th><th>ช่าง</th><th>เวลา</th><th>สถานะ</th><th></th></tr></thead><tbody id="recentBookings"></tbody></table></div></section>
+          </section>
+
+          <section class="view-panel" id="view-bookings">
+            <div class="page-heading"><div><span class="admin-eyebrow">APPOINTMENTS</span><h1>จัดการคิว<span>.</span></h1><p>ดูรายการนัดหมายและอัปเดตสถานะการจอง</p></div><button class="admin-button primary-button" id="addBookingButton">＋ เพิ่มการจอง</button></div>
+            <div class="admin-card booking-manager"><div class="booking-toolbar"><div class="search-field"><span>⌕</span><input id="bookingSearch" type="search" placeholder="ค้นหาชื่อหรือบริการ..." /></div><select id="bookingFilter"><option value="all">ทุกสถานะ</option><option value="ยืนยันแล้ว">ยืนยันแล้ว</option><option value="รอชำระ">รอชำระ</option><option value="เสร็จสิ้น">เสร็จสิ้น</option><option value="ยกเลิก">ยกเลิก</option></select></div><div class="table-wrap"><table><thead><tr><th>รหัส / ลูกค้า</th><th>บริการ</th><th>ช่าง</th><th>วันที่และเวลา</th><th>ยอดชำระ</th><th>สถานะ</th></tr></thead><tbody id="allBookings"></tbody></table></div><p class="table-foot" id="bookingResultCount"></p></div>
+          </section>
+
+          <section class="view-panel" id="view-members">
+            <div class="page-heading"><div><span class="admin-eyebrow">LOYALTY &amp; RELATIONSHIPS</span><h1>สมาชิก<span>.</span></h1><p>ดูแลสมาชิกและตรวจสอบระดับ สิทธิพิเศษ และคะแนนสะสม</p></div><button class="admin-button primary-button" id="addMemberButton">＋ เพิ่มสมาชิก</button></div>
+            <div class="member-stats"><div class="admin-card"><small>สมาชิกทั้งหมด</small><b id="memberCountCard">0</b></div><div class="admin-card"><small>สมาชิก Gold / VIP</small><b>186</b></div><div class="admin-card"><small>แต้มที่ใช้เดือนนี้</small><b>24,850 <i>pts</i></b></div></div>
+            <div class="admin-card"><div class="card-heading"><div><h2>รายชื่อสมาชิก</h2><p>ข้อมูลจำลองลูกค้าสำหรับหน้าจอผู้ดูแล</p></div><div class="search-field member-search"><span>⌕</span><input id="memberSearch" type="search" placeholder="ค้นหาสมาชิก..." /></div></div><div class="table-wrap"><table><thead><tr><th>สมาชิก</th><th>ระดับ</th><th>คะแนน</th><th>ยอดใช้จ่ายสะสม</th><th>เข้าร่วมเมื่อ</th><th>สถานะ</th></tr></thead><tbody id="membersTable"></tbody></table></div></div>
+          </section>
+
+          <section class="view-panel" id="view-staff">
+            <div class="page-heading"><div><span class="admin-eyebrow">THE PEOPLE BEHIND THE CRAFT</span><h1>ทีมช่าง<span>.</span></h1><p>ตารางงาน คะแนนรีวิว และจำนวนคิวของทีมวันนี้</p></div><button class="admin-button primary-button" id="addStaffButton">＋ เพิ่มช่าง</button></div>
+            <div class="staff-grid" id="staffGrid"></div>
+          </section>
+
+          <section class="view-panel" id="view-promotions">
+            <div class="page-heading"><div><span class="admin-eyebrow">OFFERS &amp; MEMBERSHIP</span><h1>โปรโมชัน<span>.</span></h1><p>จัดการแคมเปญ ส่วนลดช่วง Off-Peak และแพ็กเกจสมาชิก</p></div><button class="admin-button primary-button" id="addPromotionButton">＋ สร้างโปรโมชัน</button></div>
+            <div class="promotion-grid" id="promotionGrid"></div>
+          </section>
+        </div>
+        <footer class="admin-footer"><span>STREET BARBER CLUB · ADMIN PROTOTYPE</span><span>ข้อมูลตัวอย่างเท่านั้น <i>✳</i></span></footer>
+      </div>
+    </div>
+    <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>

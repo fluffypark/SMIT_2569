@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf7" />
+    <title>ข้อเสนอแนะ — Street Barber Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="feedback">
+    <div id="siteHeader"></div>
+    <main class="page-main content-wrap feedback-page">
+      <header class="page-title"><span class="eyebrow">ALWAYS GETTING BETTER</span><h1>บอกเราได้เลย<span class="orange-dot">.</span></h1><p>ทุกความคิดเห็นช่วยให้เราดูแลคุณได้ดียิ่งขึ้น ทีมงานพร้อมรับฟังเสมอ</p></header>
+      <section class="feedback-card"><div class="feedback-card-heading"><span class="feature-icon">✳</span><h2>ครั้งล่าสุดเป็นยังไงบ้าง?</h2><p>ให้คะแนนประสบการณ์และบอกเราเพิ่มเติม</p></div>
+        <form id="feedbackForm">
+          <fieldset class="rating-field"><legend>ให้คะแนนบริการ</legend><div class="rating-stars" role="group" aria-label="คะแนนบริการ"><button type="button" aria-label="1 ดาว" data-rating="1">★</button><button type="button" aria-label="2 ดาว" data-rating="2">★</button><button type="button" aria-label="3 ดาว" data-rating="3">★</button><button type="button" aria-label="4 ดาว" data-rating="4">★</button><button type="button" aria-label="5 ดาว" data-rating="5">★</button></div><small id="ratingPrompt">เลือกคะแนน 1–5 ดาว</small></fieldset>
+          <label for="feedbackTopic">หัวข้อ</label><select id="feedbackTopic"><option>ประสบการณ์โดยรวม</option><option>บริการจากช่าง</option><option>การจองคิว</option><option>ข้อเสนอแนะอื่น ๆ</option></select>
+          <label for="feedbackMessage">ความคิดเห็นของคุณ</label><textarea id="feedbackMessage" rows="5" placeholder="เล่าให้เราฟังได้เลย..." required></textarea>
+          <label class="contact-consent"><input id="contactConsent" type="checkbox" /> ยินยอมให้ผู้จัดการติดต่อกลับหากจำเป็น</label>
+          <button class="button button-primary" type="submit">ส่งความคิดเห็น <span>↗</span></button><small class="private-note">ความคิดเห็นที่ได้คะแนนต่ำจะถูกส่งให้ผู้จัดการตรวจสอบโดยตรง</small>
+        </form>
+      </section>
+    </main>
+    <div id="siteFooter"></div><div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script><script src="feedback-page.js"></script>
+  </body>
+</html>
